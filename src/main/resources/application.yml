@@ -1,0 +1,48 @@
+# logging 설정
+logging:
+  level:
+    org:
+      hibernate:
+        type:
+          descriptor:
+            sql: debug
+
+spring:
+  profiles:
+    active: dev
+    messages:
+      encoding: UTF-8
+  output:
+    ansi:
+      enabled: always
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+springdoc:
+  swagger-ui:
+    path: swagger
+    # "사용해 보기" 섹션이 기본적으로 활성화 되어야 하는지 여부를 제어
+    try-it-out-enabled: true
+    # filter 검색
+    filter: true
+    operations-sorter: method
+    # ms 단위 표시
+    display-request-duration: true
+
+# 오류 처리
+server:
+  error:
+    include-exception: true
+    include-stacktrace: always
+
+  #port 설정
+  port: 8080
+
+
+## auth.yml
+app:
+  auth:
+    token-secret: ${TOKEN_SECRET}
+    access-token-expiration-msec: ${ACCESS_TOKEN_EXPIRATION}
+    refresh-token-expiration-msec: ${REFRESH_TOKEN_EXPIRATION}
