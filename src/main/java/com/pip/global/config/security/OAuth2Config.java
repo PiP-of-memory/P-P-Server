@@ -16,8 +16,8 @@ public class OAuth2Config {
     @Data
     public static class Auth {
         private String tokenSecret;
-        private long accessTokenExpirationMsec;
-        private long refreshTokenExpirationMsec;
+        private String accessTokenExpirationMsec;
+        private String refreshTokenExpirationMsec;
     }
 
     public static final class OAuth2 {
